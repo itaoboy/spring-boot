@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<span th:text="${singelPerson.name}"></span>
+<div th:if="${not #lists.isEmpty(personList)}">
+    <ul>
+        <li th:each="person:${personList}">
+            <span th:text="${person.name}"></span>
+            <span th:text="${person.age}"></span>
+        </li>
+    </ul>
+</div>
+<script th:inline="javascript">
+    //在js中获取model对象的写法[[${xxxxx}]]
+    var single = [[${singelPerson}]]
+    console.info(single.name+"/"+single.age)
+</script>
+
+</body>
+</html>
