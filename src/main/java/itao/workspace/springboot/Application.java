@@ -16,6 +16,4 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    //下面是2.0的配置，1.x请搜索对应的设置
-
 }

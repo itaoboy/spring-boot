@@ -1,5 +1,4 @@
-/*
-package itao.workspace.springboot.config;
+package itao.workspace.springboot.config.ssl;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
@@ -9,21 +8,20 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
-*/
 /**
  * @Description 实现HTTP端口转换HTTPS
  * @Author itao
  * @Date 2019/3/16 21:11
- *//*
-
-@Configuration
+ */
+/*@Configuration
 public class SSLConfig {
 
     @Value("${server.port}")
     private String httpsPort;
 
-    @Value("${server.http.port}")
+    @Value("${http.port}")
     private String httpPort;
 
     @Bean
@@ -51,5 +49,5 @@ public class SSLConfig {
         connector.setRedirectPort(Integer.parseInt(httpsPort));
         return connector;
     }
-}
-*/
+
+}*/

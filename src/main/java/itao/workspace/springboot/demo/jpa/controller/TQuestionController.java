@@ -1,6 +1,7 @@
-package itao.workspace.springboot.demo.jpa;
+package itao.workspace.springboot.demo.jpa.controller;
 
-import itao.workspace.springboot.jpa.entity.Actor;
+import itao.workspace.springboot.demo.jpa.service.TQuestionService;
+import itao.workspace.springboot.jpa.entity.dwsurvey.TQuestion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,16 +15,16 @@ import java.util.List;
  * @Date 2019/3/17 22:22
  */
 @Controller
-@RequestMapping("actor")
-public class ActorController {
+@RequestMapping("tquestion")
+public class TQuestionController {
 
     @Autowired
-    ActorService actorService;
+    TQuestionService tQuestionService;
 
     @RequestMapping("findAll")
     @ResponseBody
-    public List<Actor> findAll(){
-        return actorService.findAll();
+    public List<TQuestion> findAll(){
+        return tQuestionService.findAll();
     }
 
 }

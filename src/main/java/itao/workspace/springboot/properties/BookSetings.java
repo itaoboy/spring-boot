@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @since 2019/03/13 20:38
  */
 @Component
-@PropertySource("classpath:properties/book.properties")
+@PropertySource("classpath:config/book.properties")
 @ConfigurationProperties(prefix = "book")
 public class BookSetings {
     private String author;

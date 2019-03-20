@@ -1,7 +1,7 @@
-package itao.workspace.springboot.demo.jpa;
+package itao.workspace.springboot.demo.jpa.service;
 
-import itao.workspace.springboot.jpa.entity.Actor;
-import itao.workspace.springboot.jpa.repository.ActorRepository;
+import itao.workspace.springboot.jpa.entity.sakila.Actor;
+import itao.workspace.springboot.jpa.repository.sakila.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

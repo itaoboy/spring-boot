@@ -1,20 +1,19 @@
-package itao.workspace.springboot.jpa.entity;
+package itao.workspace.springboot.jpa.entity.sakila;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "actor")
 public class Actor {
 
-    /*
-    @GeneratedValue*/
     @Id
+    @Column(name = "actor_id")
     private long actorId;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "last_update")
     private java.sql.Timestamp lastUpdate;
 
     public long getActorId() {
