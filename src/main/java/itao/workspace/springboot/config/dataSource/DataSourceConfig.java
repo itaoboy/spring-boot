@@ -6,13 +6,15 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.PropertySource;
 
 /**
- * @Description 多数据源配置
+ * @Description 多数据源配置 + 数据库连接池HikariCP
  * @Author itao
  * @Date 2019/3/19 22:03
  */
 @Configuration
+@PropertySource("classpath:config/datasource.properties")
 public class DataSourceConfig {
 
     @Bean
@@ -42,5 +44,4 @@ public class DataSourceConfig {
         return secondDataSourceProperties().initializeDataSourceBuilder()
                 .type(HikariDataSource.class).build();
     }
-
 }

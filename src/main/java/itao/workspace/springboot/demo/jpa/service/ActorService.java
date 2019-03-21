@@ -22,4 +22,15 @@ public class ActorService {
         return actorRepository.findAll();
     }
 
+    public List<Actor> findByFirstName(String firstName){
+        return actorRepository.findByFirstName(firstName);
+    }
+
+    public List<Actor> findByLastName(String lastName){
+        return actorRepository.findByLastName(lastName);
+    }
+
+    public int updateFirstNameById(int actor_id,String firstName){
+        return actorRepository.updateFirstNameById(actor_id,firstName);
+    }
 }
