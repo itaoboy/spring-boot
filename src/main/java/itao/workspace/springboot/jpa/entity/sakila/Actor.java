@@ -8,7 +8,7 @@ public class Actor {
 
     @Id
     @Column(name = "actor_id")
-    private long actorId;
+    private Long actorId;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
@@ -16,11 +16,11 @@ public class Actor {
     @Column(name = "last_update")
     private java.sql.Timestamp lastUpdate;
 
-    public long getActorId() {
+    public Long getActorId() {
         return actorId;
     }
 
-    public void setActorId(long actorId) {
+    public void setActorId(Long actorId) {
         this.actorId = actorId;
     }
 

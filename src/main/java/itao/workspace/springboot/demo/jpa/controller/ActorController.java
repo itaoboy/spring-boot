@@ -2,8 +2,10 @@ package itao.workspace.springboot.demo.jpa.controller;
 
 import itao.workspace.springboot.demo.jpa.service.ActorService;
 import itao.workspace.springboot.jpa.entity.sakila.Actor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +18,8 @@ import java.util.List;
 @RestController
 @RequestMapping("actor")
 public class ActorController {
+
+    Logger logger = LoggerFactory.getLogger(ActorController.class);
 
     @Autowired
     ActorService actorService;
@@ -39,4 +43,17 @@ public class ActorController {
     public int updateFirstNameById(@RequestParam("actor_id")int actor_id,@RequestParam("firstName")String firstName){
         return actorService.updateFirstNameById(actor_id,firstName);
     }
+
+    @RequestMapping(value = "findDynamicConditions",method = RequestMethod.POST)
+    public List<Actor> findDynamicConditions(@RequestBody Actor actor){
+        return actorService.findDynamicConditions(actor);
+    }
+
+    @RequestMapping(value = "findAllByPageAndSort",method = RequestMethod.POST)
+    public Page<Actor> findAllByPageAndSort(@RequestParam("pageNumber")int pageNumber, @RequestParam("pageSize")int pageSize){
+        logger.info("参数:{},{}",pageNumber,pageSize);
+        return actorService.findAllByPageAndSort(pageNumber,pageSize);
+    }
+
+
 }
