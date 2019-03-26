@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
@@ -30,7 +31,6 @@ public interface ActorRepository extends JpaRepository<Actor,Long>
 
     //更新查询
     @Modifying
-    @Transactional
     @Query("UPDATE Actor SET first_name=:firstName WHERE actor_id=:actor_id")
     int updateFirstNameById(@Param("actor_id") int actor_id,@Param("firstName")String firstName);
 

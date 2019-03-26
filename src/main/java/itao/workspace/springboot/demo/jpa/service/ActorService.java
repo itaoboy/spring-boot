@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -39,7 +40,9 @@ public class ActorService {
     public List<Actor> findByLastName(String lastName){
         return actorRepository.findByLastName(lastName);
     }
+
     //更新或删除
+    @Transactional
     public int updateFirstNameById(int actor_id,String firstName){
         return actorRepository.updateFirstNameById(actor_id,firstName);
     }
