@@ -1,5 +1,7 @@
 package itao.workspace.springboot.jpa.entity.sakila;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import javax.persistence.*;
 
 @Entity
